@@ -3,13 +3,9 @@ package test;
 import java.util.Scanner;
 
 public class 반복연습2 {
-	
 
-	
 	static char com(int cc) {
-		
-		
-		
+
 		switch (cc) {
 		case 1:
 			return '도';
@@ -45,16 +41,16 @@ public class 반복연습2 {
 				break;
 			}
 
-			int aa=(int) (Math.random() * 5) + 1;
-			int bb=(int) (Math.random() * 5) + 1;
-			
+			int aa = (int) (Math.random() * 5) + 1;
+			int bb = (int) (Math.random() * 5) + 1;
+
 			char com1 = com(aa);
-			System.out.println("컴퓨터 : "+ com1);
+			System.out.println("컴퓨터 : " + com1);
 			char user = com(bb);
-			System.out.println("유저 : "+ user);
-			if(aa>bb) {
+			System.out.println("유저 : " + user);
+			if (aa > bb) {
 				System.out.println("컴퓨터가 이겼습니다.");
-			} else if(aa<bb) {
+			} else if (aa < bb) {
 				System.out.println("축하합니다! 유저가 이겼습니다!");
 			} else {
 				System.out.println("비겼습니다.");
