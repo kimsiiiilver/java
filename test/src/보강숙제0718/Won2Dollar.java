@@ -26,6 +26,5 @@ public class Won2Dollar extends Converter{
 	}
 	
 	
-	
 
 }
