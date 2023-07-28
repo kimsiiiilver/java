@@ -10,7 +10,7 @@ public class Calculator {
 			return memory;
 		}
 		
-		public void setMemory(int memory) {
+		public synchronized void setMemory(int memory) {
 			this.memory=memory;
 		//	try {Thread.sleep(500);}
 		//	catch (Exception e) {
