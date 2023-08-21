@@ -1,154 +1,115 @@
 package sec01;
 
-import java.awt.*;
-import java.util.Calendar;
+import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import java.awt.Color;
+import javax.swing.JTextPane;
+import java.awt.Font;
+import javax.swing.JButton;
+import javax.swing.JRadioButton;
 
-public class test extends JFrame implements Runnable {
+public class test extends JFrame {
 
-	private Thread thread;
-	private JLabel label;
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
 
+	/**
+	 * Launch the application.
+	 */
 	public static void main(String[] args) {
-		JFrame.setDefaultLookAndFeelDecorated(true);
-		new test();
-
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					test frame = new test();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
+	/**
+	 * Create the frame.
+	 */
 	public test() {
-		setLayout((LayoutManager) new FlowLayout());
-		label = new JLabel();
-		label.setFont(new Font("Serif", Font.PLAIN, 20));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 300,300);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 0, 0));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-		if (thread == null) {
-			// thread가 null인 경우에만 아래의 코드를 실행합니다. 이는 스레드가 아직 실행되지 않은 경우에만 스레드를 생성하고 시작하기
-			// 위함입니다.
-
-			// this의 의미는 Runnable이 구현된 객체를 뜻함(DigitalClock)
-			thread = new Thread(this);
-			thread.start();
-		}
-		add(label);
-		// label을 프레임에 추가합니다. 이로써 디지털 시계의 시간이 표시되는 라벨이 화면에 나타납니다.
-		setBounds(100, 100, 400, 100);
-		// 프레임의 위치와 크기를 설정합니다. (100, 100)은 프레임의 위치를 나타내고, (400, 100)은 프레임의 폭과 높이를 나타냅니다.
-		setVisible(true);
-		// 프레임을 화면에 표시합니다.
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		// 프레임이 닫힐 때 프로그램을 종료하도록 설정합니다.
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("JAVAPROJECT");
+		lblNewLabel.setFont(new Font("맑은 고딕", Font.BOLD, 10));
+		lblNewLabel.setBounds(211, 0, 83, 25);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("\uB144\uB3C4");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1.setBounds(86, 105, 31, 27);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("08 \uC6D4  21 \uC77C");
+		lblNewLabel_2.setForeground(new Color(255, 0, 0));
+		lblNewLabel_2.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+		lblNewLabel_2.setBounds(131, 97, 130, 33);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_4 = new JLabel("\uC77C   \uC6D4   \uD654   \uC218   \uBAA9   \uAE08   \uD1A0");
+		lblNewLabel_4.setForeground(new Color(255, 255, 255));
+		lblNewLabel_4.setFont(new Font("맑은 고딕", Font.PLAIN, 18));
+		lblNewLabel_4.setBounds(23, 196, 238, 25);
+		contentPane.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("\uC624\uC804");
+		lblNewLabel_5.setForeground(new Color(255, 255, 255));
+		lblNewLabel_5.setBounds(23, 43, 31, 15);
+		contentPane.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("\uC624\uD6C4");
+		lblNewLabel_6.setForeground(new Color(255, 255, 255));
+		lblNewLabel_6.setBounds(23, 68, 57, 15);
+		contentPane.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_10 = new JLabel("\uC74C\uB825");
+		lblNewLabel_10.setForeground(new Color(255, 255, 255));
+		lblNewLabel_10.setBounds(86, 149, 31, 25);
+		contentPane.add(lblNewLabel_10);
+		
+		JLabel lblNewLabel_11 = new JLabel("08 \uC6D4  07 \uC77C");
+		lblNewLabel_11.setForeground(new Color(0, 128, 64));
+		lblNewLabel_11.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+		lblNewLabel_11.setBounds(131, 140, 130, 32);
+		contentPane.add(lblNewLabel_11);
+		
+		JLabel lblNewLabel_7 = new JLabel("09 : 22");
+		lblNewLabel_7.setBackground(new Color(0, 0, 0));
+		lblNewLabel_7.setForeground(new Color(255, 0, 0));
+		lblNewLabel_7.setFont(new Font("맑은 고딕", Font.PLAIN, 45));
+		lblNewLabel_7.setBounds(86, 23, 175, 60);
+		contentPane.add(lblNewLabel_7);
+		
+		textField = new JTextField();
+		textField.setBounds(35, 108, 45, 21);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setText("\u25CF");
+		textField_1.setForeground(new Color(255, 0, 0));
+		textField_1.setBackground(new Color(0, 0, 0));
+		textField_1.setBounds(240, 216, 27, 21);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
 	}
-
-	public void run() {
-		while (true) {
-			Calendar cal = Calendar.getInstance();
-			String lunarDate=calculateLunarDate(cal);
-			String timeInfo = getTimeInfo(cal);
-			String finalInfo = timeInfo + "<br>" + lunarDate;
-            label.setText("<html>" + finalInfo + "</html>");
-            
-			// Calendar 클래스의 getInstance() 메서드를 사용하여 현재 시간을 나타내는 cal 객체를 생성합니다.
-			String week = "";
-			switch (cal.get(Calendar.DAY_OF_WEEK)) {
-			case 1:
-				week = "일";
-				break;
-			case 2:
-				week = "월";
-				break;
-			case 3:
-				week = "화";
-				break;
-			case 4:
-				week = "수";
-				break;
-			case 5:
-				week = "목";
-				break;
-			case 6:
-				week = "금";
-				break;
-			case 7:
-				week = "토";
-				break;
-			}
-			String ampm = "오전 ";
-			if (cal.get(Calendar.AM_PM) == 1) {
-				ampm = "오후 ";
-			}
-
-			String now = "<html>" + cal.get(Calendar.YEAR) + "년 " + (cal.get(Calendar.MONTH) + 1) + "월 "
-					+ cal.get(Calendar.DATE) + "일 " + week + "요일 " + "<br>&nbsp;&nbsp;&nbsp;&nbsp;" + ampm
-					+ cal.get(Calendar.HOUR) + "시 " + cal.get(Calendar.MINUTE) + "분 " + cal.get(Calendar.SECOND) + "초 "
-					+ "</html>";
-			// cal 객체에서 현재 연도, 월, 일, 시, 분, 초를 가져와 now 문자열에 저장합니다. 이렇게 생성된 문자열은 디지털 시계의 현재
-			// 시간을 표시합니다.
-			label.setText(now);
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-
-	private String calculateLunarDate(Calendar cal) {
-		int year = cal.get(Calendar.YEAR);
-		int month = cal.get(Calendar.MONTH) + 1;
-		int day = cal.get(Calendar.DATE);
-
-		// 음력 계산
-		int lunarYear = year - 2000;
-		int lunarMonth = (year - 2000) * 12 + month - 1;
-
-		String lunarMonthStr = Integer.toString(lunarMonth);
-		String lunarDayStr = Integer.toString(day);
-
-		if (lunarMonthStr.length() == 1) {
-			lunarMonthStr = "0" + lunarMonthStr;
-		}
-		if (lunarDayStr.length() == 1) {
-			lunarDayStr = "0" + lunarDayStr;
-		}
-
-		return lunarYear + "년 " + lunarMonthStr + "월 " + lunarDayStr + "일";
-	}
-	private String getTimeInfo(Calendar cal) {
-        String week = "";
-        switch (cal.get(Calendar.DAY_OF_WEEK)) {
-            case 1:
-                week = "일";
-                break;
-            case 2:
-                week = "월";
-                break;
-            case 3:
-                week = "화";
-                break;
-            case 4:
-                week = "수";
-                break;
-            case 5:
-                week = "목";
-                break;
-            case 6:
-                week = "금";
-                break;
-            case 7:
-                week = "토";
-                break;
-        }
-
-        String amPm = "오전 ";
-        if (cal.get(Calendar.AM_PM) == 1) {
-            amPm = "오후 ";
-        }
-
-        return cal.get(Calendar.YEAR) + "년 " + (cal.get(Calendar.MONTH) + 1) + "월 "
-                + cal.get(Calendar.DATE) + "일 " + week + "요일 " + "<br>&nbsp;&nbsp;&nbsp;&nbsp;" + amPm
-                + cal.get(Calendar.HOUR) + "시 " + cal.get(Calendar.MINUTE) + "분 " + cal.get(Calendar.SECOND) + "초";
-    }
 }
-
-
